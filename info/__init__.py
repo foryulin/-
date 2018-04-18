@@ -1,5 +1,4 @@
 from logging.handlers import RotatingFileHandler
-
 from flask_sqlalchemy import SQLAlchemy
 import redis
 import logging
@@ -37,8 +36,7 @@ def create_app(config_name):
     CSRFProtect(app)
     # 设置app的保存位置
     Session(app)
-
-    from info.modules.index.view import index_blu
+    from info.modules.index import index_blu
     app.register_blueprint(index_blu)
     return app
 

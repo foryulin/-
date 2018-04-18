@@ -1,4 +1,5 @@
 import redis
+import logging
 
 
 class Config(object):
@@ -7,6 +8,7 @@ class Config(object):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = "mysql://root:mysql@127.0.0.1:3306/information"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    LOG_LEVEL = logging.DEBUG
 
 #     redis 配置
     REDIS_HOST = '127.0.0.1'
@@ -24,7 +26,7 @@ class DevelopementConfig(Config):
 
 class ProductionConfig(Config):
     """生产模式下的配置"""
-    DEBUG = False
+    LOG_LEVEL = logging.ERROR
 
 class TestingConfig(Config):
     """调试模式下的配置"""

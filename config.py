@@ -16,3 +16,12 @@ class Config(object):
     SESSION_USE_SIGNER = True  # 让cookie中的session_id被加密处理
     SESSION_REDIS = redis.StrictRedis(host=REDIS_HOST,port=REDIS_POST)
     PERMANENT_SESSION_LIFETIME = 86400  # session 的有效期，单位是秒
+
+class DevelopementConfig(Config):
+    """开发模式下的配置"""
+    DEBUG = True
+
+
+class ProductionConfig(Config):
+    """生产模式下的配置"""
+    pass

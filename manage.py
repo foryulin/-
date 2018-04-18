@@ -8,9 +8,6 @@ manger = Manager(app)
 Migrate(app,db)
 manger.add_command('db',MigrateCommand)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
 
 
 if __name__ == '__main__':

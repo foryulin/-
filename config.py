@@ -24,4 +24,14 @@ class DevelopementConfig(Config):
 
 class ProductionConfig(Config):
     """生产模式下的配置"""
-    pass
+    DEBUG = False
+
+class TestingConfig(Config):
+    """调试模式下的配置"""
+    DEBUG = True
+
+
+config = {
+    'development':DevelopementConfig,
+    'production':ProductionConfig
+}
